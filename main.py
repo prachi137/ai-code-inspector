@@ -101,9 +101,11 @@ async def handle_github_webhook(
         if event_type == "ping":
             return {"status": "success", "message": "Pong! Webhook is active."}
             
-        # 2. Signature verification (agar secret set hai)
-        if x_hub_signature_256:
-            verify_github_signature(body, x_hub_signature_256)
+        # 2. Signature verification: when a WEBHOOK_SECRET is configured,
+        # a valid X-Hub-Signature-256 header is mandatory.
+        if settings.WEBHOOK_SECRET:
+            if not x_hub_signature_256 or not verify_github_signature(body, x_hub_signature_256):
+                raise HTTPException(status_code=401, detail="Invalid or missing signature")
             
         payload = await request.json()
         
@@ -115,6 +117,8 @@ async def handle_github_webhook(
 
         return {"status": "success", "message": f"Event {event_type} received successfully"}
 
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"Webhook Error: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
