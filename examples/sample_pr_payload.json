@@ -1,0 +1,92 @@
+{
+  "action": "opened",
+  "number": 42,
+  "pull_request": {
+    "url": "https://api.github.com/repos/example-owner/example-repo/pulls/42",
+    "id": 1234567890,
+    "node_id": "PR_kwDOExample000000",
+    "html_url": "https://github.com/example-owner/example-repo/pull/42",
+    "diff_url": "https://github.com/example-owner/example-repo/pull/42.diff",
+    "patch_url": "https://github.com/example-owner/example-repo/pull/42.patch",
+    "issue_url": "https://api.github.com/repos/example-owner/example-repo/issues/42",
+    "number": 42,
+    "state": "open",
+    "locked": false,
+    "title": "Add an example change",
+    "user": {
+      "login": "example-contributor",
+      "id": 12345678,
+      "node_id": "MDQ6VXNlcjEyMzQ1Njc4",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "An example pull request used to exercise the webhook locally.",
+    "created_at": "2026-10-30T00:00:00Z",
+    "updated_at": "2026-10-30T00:00:00Z",
+    "closed_at": null,
+    "merged": false,
+    "merge_commit_sha": null,
+    "commits_url": "https://api.github.com/repos/example-owner/example-repo/pulls/42/commits",
+    "review_comments_url": "https://api.github.com/repos/example-owner/example-repo/pulls/42/comments",
+    "comments_url": "https://api.github.com/repos/example-owner/example-repo/issues/42/comments",
+    "head": {
+      "label": "example-contributor:feature/example",
+      "ref": "feature/example",
+      "sha": "0123456789abcdef0123456789abcdef01234567",
+      "repo": {
+        "id": 87654321,
+        "name": "example-repo",
+        "full_name": "example-owner/example-repo",
+        "private": false,
+        "html_url": "https://github.com/example-owner/example-repo",
+        "owner": {
+          "login": "example-owner",
+          "id": 87654320,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjg3NjU0MzIw",
+          "type": "Organization",
+          "site_admin": false
+        }
+      }
+    },
+    "base": {
+      "label": "example-owner:main",
+      "ref": "main",
+      "sha": "89abcdef0123456789abcdef0123456789abcdef",
+      "repo": {
+        "id": 87654321,
+        "name": "example-repo",
+        "full_name": "example-owner/example-repo",
+        "private": false,
+        "html_url": "https://github.com/example-owner/example-repo",
+        "owner": {
+          "login": "example-owner",
+          "id": 87654320,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjg3NjU0MzIw",
+          "type": "Organization",
+          "site_admin": false
+        }
+      }
+    }
+  },
+  "repository": {
+    "id": 87654321,
+    "name": "example-repo",
+    "full_name": "example-owner/example-repo",
+    "private": false,
+    "html_url": "https://github.com/example-owner/example-repo",
+    "owner": {
+      "login": "example-owner",
+      "id": 87654320,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjg3NjU0MzIw",
+      "type": "Organization",
+      "site_admin": false
+    }
+  },
+  "sender": {
+    "login": "example-contributor",
+    "id": 12345678,
+    "node_id": "MDQ6VXNlcjEyMzQ1Njc4",
+    "type": "User",
+    "site_admin": false
+  }
+}
